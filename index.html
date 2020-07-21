@@ -1,1 +1,260 @@
-111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+<!DOCTYPE html>
+<html>
+<head>
+  <title>超融合虚拟化平台</title>
+  <meta charset="utf-8" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #box2 {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #zbox1 {
+      width: 100%;
+      height: 90%;
+      margin-top: 0%;
+      float: left;
+    }
+
+    #zbox2 {
+      background-color: #4C9394;
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .buttom {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      float: right;
+      background: #1D322F;
+      text-align: center;
+      margin: 5px 50px 0 0;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid #fff;
+      box-shadow: 2px 2px 5px #666;
+      cursor: pointer;
+    }
+
+    input[disabled] {
+      background-color: #666;
+    }
+
+    #iframe1 {
+      width: 100%;
+      height: calc(100% - 40px);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="box2">
+    <div id="zbox2">
+      <input type="button" id="btn2" value="关机" class="buttom" />
+      <input type="button" id="btn" value="开机" class="buttom" />
+    </div>
+    <iframe id="iframe1" src=""></iframe>
+  </div>
+</body>
+<script src="./jquery-3.5.0.min.js"></script>
+<script src="./jquery.cookie.js"></script>
+<script type="text/javascript">
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var url = "https://192.168.1.153:8006"//pve访问地址
+  var pveUser = "root"//用户
+  var pvePass = "123456"//用户密码
+  var pveNodeName = "god"//节点名称
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+  }
+  var studentId = GetQueryString("studentId")//虚拟机id
+  var QuestId = GetQueryString("QuestId")//模版id
+  // var studentId = 135;//测试用
+  // var QuestId = 128;
+
+  var res1 = null;
+  function login() {
+    // 登陆获取Cookie、ticket、Token
+    $.ajax({
+      //几个参数需要注意一下
+      type: "POST",//方法类型
+      dataType: "json",//预期服务器返回的数据类型
+      url: url + "/api2/json/access/ticket",//url
+      async: false,
+      data: { "username": pveUser, "password": pvePass, "realm": "pam" },
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.withCredentials = true;
+      },
+      success: function (res) {
+        ticket = res.data.ticket;
+        var date = new Date();
+        document.cookie = "PVEAuthCookie=" + ticket + ";path=/;";
+        res1 = res;
+      }
+    });
+  };
+
+  function shutdownVM(ticket, csr) {
+    // 关闭虚拟机
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + studentId + "/status/stop",
+      async: false,
+      data: {},
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.setRequestHeader("CSRFPreventionToken", csr);
+      }
+    });
+  };
+
+  function deleteVM(ticket, csr) {
+    // 删除虚拟机
+    $.ajax({
+      type: "DELETE",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + studentId + "",
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.setRequestHeader("CSRFPreventionToken", csr);
+      },
+    });
+  }
+
+  function startVM(ticket, csr) {
+    // 开启虚拟机
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + studentId + "/status/start",
+      async: false,
+      data: {},
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.setRequestHeader("CSRFPreventionToken", csr);
+      }
+    });
+  }
+
+  function vncVM(ticket, csr) {
+    // 建立vnc连接
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + studentId + "/vncproxy",
+      async: false,
+      data: { "websocket": 1 },
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.setRequestHeader("CSRFPreventionToken", csr);
+      },
+      success: function (res) {
+        OpenVnc(res.data.port, res.data.ticket);
+      }
+    });
+  }
+  function OpenVnc(port, ticket) {
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + studentId + "/vncwebsocket",
+      data: { "port": port, "vncticket": ticket },
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (res) {
+        document.getElementById('iframe1').contentWindow.location.reload(true);
+      }
+    });
+  }
+
+  function cloneVM(csr) {
+    // 从模版克隆虚拟机
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: url + "/api2/json/nodes/" + pveNodeName + "/qemu/" + QuestId + "/clone",
+      data: { "newid": studentId, "target": pveNodeName },
+      xhrFields: {
+        withCredentials: true
+      },
+      beforeSend: function (xmlReq) {
+        xmlReq.setRequestHeader("CSRFPreventionToken", csr);
+      }
+    });
+  }
+
+  login();
+  document.getElementById("iframe1").src = url + "/?console=kvm&novnc=1&vmid=" + studentId + "&vmname=Copy-of-VM-NoOS&node=" + pveNodeName + "&resize=scale&cmd=";
+
+  // 关机
+  var oBtn2 = document.getElementById('btn2');
+  oBtn2.onclick = function () {
+    oBtn.disabled = false;
+    oBtn2.disabled = true;
+    oBtn2.style.cursor = "default";
+    oBtn.style.cursor = "pointer";
+
+    login();
+    shutdownVM(res1.data.ticket, res1.data.CSRFPreventionToken);
+    setTimeout(function () {
+      deleteVM(res1.data.ticket, res1.data.CSRFPreventionToken);
+    }, 5 * 1000);//延迟5000毫米
+  }
+
+  // 开机
+  var oBtn = document.getElementById('btn');
+  oBtn.onclick = function () {
+    oBtn.disabled = true;
+    oBtn2.disabled = false;
+    oBtn.style.cursor = "default";
+    oBtn2.style.cursor = "pointer";
+
+    login();
+    cloneVM(res1.data.CSRFPreventionToken);
+    setTimeout(function () {
+      startVM(res1.data.ticket, res1.data.CSRFPreventionToken);
+      vncVM(res1.data.ticket, res1.data.CSRFPreventionToken);
+    }, 5 * 1000);//延迟5000毫米
+  }
+
+
+</script>
+
+</html>
