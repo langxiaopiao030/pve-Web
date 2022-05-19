@@ -12,4 +12,5 @@
 
 五、	批量关闭并删除所有虚拟机：访问https://PVE的IP地址:8006/pve-docs/api-viewer/deleteAll.html?studentIdList=110,111,112,113,114
 地址中studentIdList为需要被关闭并删除的虚拟机ID。
+
 秒啊
